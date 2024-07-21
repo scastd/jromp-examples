@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     double start = omp_get_wtime();
 
     // La variable sum es una variable de reducción (+)
-#pragma omp parallel for private(i, x) reduction(+:sum)
+    #pragma omp parallel for private(i, x) reduction(+:sum)
     for (i = 1; i <= n; i++) {
         x = h * (i - 0.5);
         sum += calc(x);

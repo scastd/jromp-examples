@@ -34,7 +34,7 @@ int main() {
 
     // Las variables a, b, c, m, n, n_threads son de tipo compartido
     // Las variables i, j, sum, tid son de tipo privado
-#pragma omp parallel for private(i, j, sum, tid) shared(a, b, c, m, n, n_threads)
+    #pragma omp parallel for private(i, j, sum, tid) shared(a, b, c, m, n, n_threads)
     for (i = 0; i < m; i++) {
         // Get ID of thread
         tid = omp_get_thread_num();
